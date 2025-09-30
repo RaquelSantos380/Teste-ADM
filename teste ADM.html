@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste para Administradores - LojinhaDaRakyOfficial</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌷</text></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fbeff1, #fde7f0, #f5d8e8);
+            color: #083170;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .title {
+            font-size: 2.5em;
+            color: #f09bae;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #083170;
+            opacity: 0.8;
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #083170;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #f09bae;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: 'Quicksand', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #e86a8a;
+            box-shadow: 0 0 0 3px rgba(240, 155, 174, 0.3);
+        }
+        
+        .rules-box {
+            background: linear-gradient(135deg, #f8f0f2, #fae6ee);
+            border: 2px solid #f09bae;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .rules-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #f09bae;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .rule-item {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(240, 155, 174, 0.3);
+            line-height: 1.5;
+        }
+        
+        .rule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .question-box {
+            background: white;
+            border: 2px solid #f09bae;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .question-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .question-text {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #083170;
+            line-height: 1.4;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f8f0f2;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover {
+            background: #fae6ee;
+            border-color: #f09bae;
+        }
+        
+        .option input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .checkbox-option {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 15px;
+            background: #f8f0f2;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox-option:hover {
+            background: #fae6ee;
+            border-color: #f09bae;
+        }
+        
+        .checkbox-option input {
+            width: auto;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #f09bae, #e86a8a);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 4px 15px rgba(240, 155, 174, 0.4);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 155, 174, 0.6);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #f09bae;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-title {
+            font-size: 2em;
+            color: #f09bae;
+            margin-bottom: 15px;
+        }
+        
+        .modal-text {
+            font-size: 1.1em;
+            color: #083170;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .close-btn {
+            background: #f09bae;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 12px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            background: #e86a8a;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #083170;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 2em;
+            }
+            
+            .question-box {
+                padding: 20px;
+            }
+        }
+        
+        .required::after {
+            content: " *";
+            color: #e86a8a;
+        }
+        
+        .error {
+            color: #e86a8a;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🌷 Teste para Administradores 🌷</h1>
+            <p class="subtitle">LojinhaDaRakyOfficial - Demonstre seu conhecimento sobre as regras do grupo!</p>
+        </div>
+
+        <form id="testForm">
+            <!-- Informações Pessoais -->
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="userName" class="required">Seu Nome ou Apelido</label>
+                    <input type="text" id="userName" placeholder="Como gostaria de ser chamado?" required>
+                    <div class="error" id="nameError">Por favor, digite seu nome ou apelido</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userEmail" class="required">Seu E-mail</label>
+                    <input type="email" id="userEmail" placeholder="seu@email.com" required>
+                    <div class="error" id="emailError">Por favor, digite um e-mail válido</div>
+                </div>
+            </div>
+
+            <!-- Regras do Grupo -->
+            <div class="rules-box">
+                <h3 class="rules-title">📋 Regras do Grupo - LojinhaDaRakyOfficial</h3>
+                <div class="rule-item">• 1- Ser gentil com todos</div>
+                <div class="rule-item">• 2- Respeitar os membros e evitar Brigas desnecessárias 🪷</div>
+                <div class="rule-item">• 3- Sem figurinhas 🔞 ou maldosas!</div>
+                <div class="rule-item">• 4- Palavras ofensivas, ou assuntos 🔞 não são permitidos.</div>
+                <div class="rule-item">• 5- Nada de acusações ou intrigas!</div>
+                <div class="rule-item">• 6- Respeite os admins E A RAKY! 🪷</div>
+                <div class="rule-item">• 7- Não flode (ex: Figurinhas, pedido de doações)🌷</div>
+                <div class="rule-item">• 8- Sem áudios estourados/sem sentido</div>
+                <div class="rule-item">• 9- Evite julgar o valor do próximo</div>
+                <div class="rule-item">• 10- Evite fotos/vídeos de coisas pessoais</div>
+                <div class="rule-item">• 11- NÃO Ligar sem permissão 📞</div>
+                <div class="rule-item">• 12- Antes de divulgar Links, peça permissão a algum ADM 💕</div>
+                <div class="rule-item">• 13- Aqui é grupo sobre Adopt Me, não para conversar sobre qualquer coisa! 💐</div>
+                <div class="rule-item">• 14- ❌ Rifas de Pets</div>
+                <div class="rule-item">• 15- Não permitimos vendas de contas/robux/ ou grupos 💐</div>
+            </div>
+
+            <!-- Questões do Teste -->
+            <div class="form-section">
+                <h3 style="color: #f09bae; margin-bottom: 20px; text-align: center;">📝 Questões do Teste</h3>
+
+                <!-- Questão 1 -->
+                <div class="question-box">
+                    <div class="question-text">1. Joana está vendendo seu Pet por 10 reais! Grazi comenta: "nossa kk tem gente vendendo por 2,35 no grupo do Luke amiga". Qual ação você tomaria?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="A" required>
+                            Aviso para Grazi por julgar o valor
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="B">
+                            Lembrete educado sobre a regra de não julgar valores
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="C">
+                            Nenhuma ação, é apenas uma opinião
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 2 -->
+                <div class="question-box">
+                    <div class="question-text">2. Um membro anuncia que está vendendo Robux no grupo. O que você faz?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="A" required>
+                            Aviso imediato (venda de Robux é proibida)
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="B">
+                            Lembrete sobre as regras de venda
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="C">
+                            Permitir, desde que seja um valor justo
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 3 -->
+                <div class="question-box">
+                    <div class="question-text">3. Dois membros iniciam leilões ao mesmo tempo. Qual ação correta?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="A" required>
+                            Aviso para o segundo que inciou (só um leilão por vez)
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="B">
+                            Pedir para um esperar o outro terminar
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="C">
+                            Permitir ambos,
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 4 -->
+                <div class="question-box">
+                    <div class="question-text">4. Um membro posta figurinha de teor adulto. Qual sua ação?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q4" value="A" required>
+                            Aviso (conteúdo adulto proibido)
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="B">
+                            Ban imediato (é muito grave)
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="C">
+                            Apagar o contéudo e dar aviso verbal
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 5 -->
+                <div class="question-box">
+                    <div class="question-text">5. Membro divulga link sem permissão de ADM. O que fazer?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q5" value="A" required>
+                            Aviso + remover o link
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="B">
+                            Apenas remover o link e falar pra pedir permissão na próxima
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 6 -->
+                <div class="question-box">
+                    <div class="question-text">6. Nova membro vende item de outro jogo (não Adopt Me). É sua primeira infração. O que fazer?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q6" value="A" required>
+                            Lembrete educativo sobre as regras
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="B">
+                            Aviso formal (todos devem ler as regras)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 7 -->
+                <div class="question-box">
+                    <div class="question-text">7. Membro desiste de middle depois do ADM ser chamado. Qual procedimento?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q7" value="A" required>
+                            Remover do grupo middle sem aviso
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="B">
+                            Aviso por desperdiçar tempo do ADM
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 8 -->
+                <div class="question-box">
+                    <div class="question-text">8. Membro causa problemas no PV, mas não no grupo. Isso gera aviso?</div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q8" value="A" required>
+                            Não, problemas no PV não são do grupo
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="B">
+                            Sim, gentileza deve ser em todo lugar
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="C">
+                            Apenas se a vítima reclamar oficialmente
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 9 - Múltipla escolha -->
+                <div class="question-box">
+                    <div class="question-text">9. Quais das seguintes afirmações estão CORRETAS segundo as regras?</div>
+                    <div class="options">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="A">
+                            Vendas de Robux são permitidas com autorização
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="B">
+                            Julgar valores de outros membros é proibido
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="C">
+                            Figurinhas adultas resultam em aviso imediato
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="D">
+                            Flood é permitido se for conteúdo do Adopt Me
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="E">
+                            Rifas de pets são estritamente proibidas
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="F">
+                            Vendas de contas são permitidas
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="G">
+                            Links precisam de autorização prévia de ADM
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q9" value="H">
+                            Conteúdo de outros jogos é sempre permitido
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Questão 10 -->
+                <div class="question-box">
+                    <div class="question-text">10. Membro deseja entrar no grupo </div>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q10" value="A" required>
+                            Recusa, caso esteja sem foto e sem nome
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q10" value="B">
+                            Aprova e manda o a frase de Bem-Vindo
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p>Enviando suas respostas...</p>
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit" class="submit-btn" id="submitButton">
+                📨 Enviar Teste para Análise
+            </button>
+        </form>
+
+        <div class="footer">
+            <p>✨ Obrigado por participar! Entraremos em contato em breve ✨</p>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <h2 class="modal-title">🎉 Teste Enviado! 🎉</h2>
+            <p class="modal-text">Obrigado por completar o teste! Suas respostas foram enviadas para análise e entraremos em contato em breve com o resultado.</p>
+            <button class="close-btn" onclick="closeModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Inicializar EmailJS
+        emailjs.init("y2Y2FotVDMytchPMg");
+
+        // Respostas corretas
+        const respostasCorretas = {
+            q1: "A",
+            q2: "B", 
+            q3: "B",
+            q4: "B",
+            q5: "B",
+            q6: "A",
+            q7: "A",
+            q8: "A",
+            q9: ["B", "C", "E", "G"], // Respostas corretas da questão 9
+            q10: "B"
+        };
+
+        // Funções do Modal
+        function showModal() {
+            document.getElementById('successModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        // Validação do Formulário
+        function validateForm() {
+            let isValid = true;
+            const name = document.getElementById('userName').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+
+            // Validar nome
+            if (name === '') {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+            }
+
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            // Validar se todas questões foram respondidas
+            for (let i = 1; i <= 10; i++) {
+                const question = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!question) {
+                    alert(`Por favor, responda a questão ${i}`);
+                    isValid = false;
+                    break;
+                }
+            }
+
+            // Validar questão 9 (pelo menos uma opção selecionada)
+            const q9Checked = document.querySelectorAll('input[name="q9"]:checked');
+            if (q9Checked.length === 0) {
+                alert('Por favor, selecione pelo menos uma opção na questão 9');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Calcular Pontuação
+        function calculateScore() {
+            let score = 0;
+            const totalQuestions = Object.keys(respostasCorretas).length;
+
+            // Questões 1-8 e 10
+            for (let i = 1; i <= 10; i++) {
+                if (i === 9) continue; // Pular questão 9 (múltipla escolha)
+                
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === respostasCorretas[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Questão 9
+            const q9Selected = Array.from(document.querySelectorAll('input[name="q9"]:checked')).map(cb => cb.value);
+            const q9Correct = respostasCorretas.q9;
+            
+            // Verificar se todas corretas foram selecionadas e nenhuma incorreta
+            const allCorrectSelected = q9Correct.every(val => q9Selected.includes(val));
+            const noIncorrectSelected = q9Selected.every(val => q9Correct.includes(val));
+            
+            if (allCorrectSelected && noIncorrectSelected && q9Selected.length === q9Correct.length) {
+                score++;
+            }
+
+            const percentage = Math.round((score / totalQuestions) * 100);
+            
+            // Determinar classificação
+            let classification = "";
+            if (percentage >= 90) classification = "🌟 Excelente - Aprovado!";
+            else if (percentage >= 70) classification = "✅ Bom - Em análise";
+            else if (percentage >= 50) classification = "⚠️ Regular - Precisa melhorar";
+            else classification = "❌ Insuficiente - Reprovado";
+
+            return {
+                score: `${score}/${totalQuestions}`,
+                percentage: percentage,
+                classification: classification
+            };
+        }
+
+        // Obter Respostas Formatadas
+        function getFormattedAnswers() {
+            let answers = "RESPOSTAS DO TESTE:\n\n";
+            
+            // Questões 1-10
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                answers += `Questão ${i}: ${selected ? selected.value : 'Não respondida'}\n`;
+            }
+            
+            return answers;
+        }
+
+        // Enviar Email
+        async function sendEmail(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            // Mostrar loading
+            document.getElementById('loadingIndicator').style.display = 'block';
+            document.getElementById('submitButton').disabled = true;
+
+            const userName = document.getElementById('userName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            const scoreData = calculateScore();
+            const answers = getFormattedAnswers();
+
+            const templateParams = {
+                from_name: userName,
+                from_email: userEmail,
+                classification: scoreData.classification,
+                prova: answers,
+                score: scoreData.score,
+                percentage: scoreData.percentage + '%'
+            };
+
+            try {
+                await emailjs.send(
+                    'service_uto6ltk',
+                    'template_ywc2wly', 
+                    templateParams
+                );
+
+                // Esconder loading e mostrar sucesso
+                document.getElementById('loadingIndicator').style.display = 'none';
+                showModal();
+                
+                // Resetar formulário
+                document.getElementById('testForm').reset();
+                
+            } catch (error) {
+                console.error('Erro ao enviar:', error);
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('submitButton').disabled = false;
+                alert('Erro ao enviar o teste. Tente novamente.');
+            }
+        }
+
+        // Event Listeners
+        document.getElementById('testForm').addEventListener('submit', sendEmail);
+
+        // Fechar modal clicando fora
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
