@@ -458,6 +458,7 @@
                             <input type="radio" name="q6" value="B">
                             Aviso formal (todos devem ler as regras)
                         </label>
+
                     </div>
                 </div>
 
@@ -629,6 +630,8 @@
 
             // Validar se todas questões foram respondidas
             for (let i = 1; i <= 10; i++) {
+                if (i === 9) continue; // Pular questão 9 (múltipla escolha)
+                
                 const question = document.querySelector(`input[name="q${i}"]:checked`);
                 if (!question) {
                     alert(`Por favor, responda a questão ${i}`);
@@ -662,7 +665,7 @@
                 }
             }
 
-            // Questão 9
+            // Questão 9 - Múltipla escolha (CORRIGIDA)
             const q9Selected = Array.from(document.querySelectorAll('input[name="q9"]:checked')).map(cb => cb.value);
             const q9Correct = respostasCorretas.q9;
             
@@ -690,15 +693,24 @@
             };
         }
 
-        // Obter Respostas Formatadas
+        // Obter Respostas Formatadas (CORRIGIDA para questão 9)
         function getFormattedAnswers() {
             let answers = "RESPOSTAS DO TESTE:\n\n";
             
-            // Questões 1-10
+            // Questões 1-8 e 10
             for (let i = 1; i <= 10; i++) {
+                if (i === 9) continue; // Pular questão 9 (tratada separadamente)
+                
                 const selected = document.querySelector(`input[name="q${i}"]:checked`);
                 answers += `Questão ${i}: ${selected ? selected.value : 'Não respondida'}\n`;
             }
+            
+            // Questão 9 - Múltipla escolha (CORRIGIDA)
+            const q9Checkboxes = document.querySelectorAll('input[name="q9"]:checked');
+            const q9SelectedValues = Array.from(q9Checkboxes).map(checkbox => checkbox.value);
+            
+            // Exibe todas as opções selecionadas
+            answers += `Questão 9: ${q9SelectedValues.length > 0 ? q9SelectedValues.join(', ') : 'Nenhuma opção selecionada'}\n`;
             
             return answers;
         }
