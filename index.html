@@ -119,6 +119,33 @@
             line-height: 1.4;
         }
         
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f8f0f2;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover {
+            background: #fae6ee;
+            border-color: #f09bae;
+        }
+        
+        .option input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
         .text-answer textarea {
             width: 100%;
             border: 2px solid #f09bae;
@@ -309,76 +336,218 @@
 
             <!-- Questões do Teste -->
             <div class="form-section">
+                <!-- TESTE OBJETIVO - NÍVEL DIFÍCIL -->
+                <h3 class="section-title">🌸 TESTE ADM — NÍVEL DÍFICIL (PEGADINHA REAL)</h3>
+                
+                <div class="question-box">
+                    <div class="question-text">1. Dois membros começam uma discussão leve (sem xingamentos). Você:</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q1" value="A"> A) Observa sem interferir, pois ainda não virou problema</label>
+                        <label class="option"><input type="radio" name="q1" value="B"> B) Intervém pedindo respeito, evitando que evolua pra briga</label>
+                        <label class="option"><input type="radio" name="q1" value="C"> C) Dá aviso imediato para prevenir</label>
+                        <label class="option"><input type="radio" name="q1" value="D"> D) Espera um ADM maior decidir</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">2. Um membro envia link sem permissão, mas é algo "inofensivo".</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q2" value="A"> A) Apenas orienta, pois não causou problema</label>
+                        <label class="option"><input type="radio" name="q2" value="B"> B) Ignora por ser algo leve</label>
+                        <label class="option"><input type="radio" name="q2" value="C"> C) Remove a mensagem e explica as regras (se continuar aviso)</label>
+                        <label class="option"><input type="radio" name="q2" value="D"> D) Dar aviso mesmo sendo a primeira vez</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">3. Seu amigo quebra regra</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q3" value="A"> A) Dá só um toque no privado</label>
+                        <label class="option"><input type="radio" name="q3" value="B"> B) Ignora por ser leve</label>
+                        <label class="option"><input type="radio" name="q3" value="C"> C) Aplica a regra igualmente, mesmo sendo amigo</label>
+                        <label class="option"><input type="radio" name="q3" value="D"> D) Espera outro ADM agir</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">4. Já existe um leilão acontecendo e outro começa.</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q4" value="A"> A) Permite, se estiver organizado</label>
+                        <label class="option"><input type="radio" name="q4" value="B"> B) Pede para um encerrar rapidamente</label>
+                        <label class="option"><input type="radio" name="q4" value="C"> C) Interrompe o novo e orienta aguardar o atual finalizar</label>
+                        <label class="option"><input type="radio" name="q4" value="D"> D) Apenas observa</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">5. Um membro acusa outro de golpe no grupo.</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q5" value="A"> A) Permite para esclarecer</label>
+                        <label class="option"><input type="radio" name="q5" value="B"> B) Pede provas no grupo</label>
+                        <label class="option"><input type="radio" name="q5" value="C"> C) Interrompe e orienta resolver com ADM no privado</label>
+                        <label class="option"><input type="radio" name="q5" value="D"> D) Ignora até virar problema</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">6. Dono do leilão não quer vender para o último lance.</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q6" value="A"> A) Tenta convencer, mas respeita decisão dele</label>
+                        <label class="option"><input type="radio" name="q6" value="B"> B) Deixa, pois o pet é dele</label>
+                        <label class="option"><input type="radio" name="q6" value="C"> C) Dá aviso e reforça sobre o cumprimento das regras do leilão</label>
+                        <label class="option"><input type="radio" name="q6" value="D"> D) Apenas avisa sem insistir</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">7. Figurinha maldosa 18+ "de brincadeira".</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q7" value="A"> A) Permite, pois não foi sério</label>
+                        <label class="option"><input type="radio" name="q7" value="B"> B) Apenas pede para evitar</label>
+                        <label class="option"><input type="radio" name="q7" value="C"> C) Remove e aplica aviso conforme regra</label>
+                        <label class="option"><input type="radio" name="q7" value="D"> D) Ignora se ninguém reclamar</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">8. Conversa de política começa no grupo.</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q8" value="A"> A) Permite se estiver calma</label>
+                        <label class="option"><input type="radio" name="q8" value="B"> B) Ignora</label>
+                        <label class="option"><input type="radio" name="q8" value="C"> C) Interrompe e orienta evitar esse tipo de assunto</label>
+                        <label class="option"><input type="radio" name="q8" value="D"> D) Apenas observa</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">9. Membro quer fazer 3 leilões no dia.</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q9" value="A"> A) Permite se forem rápidos</label>
+                        <label class="option"><input type="radio" name="q9" value="B"> B) Apenas avisa depois</label>
+                        <label class="option"><input type="radio" name="q9" value="C"> C) Impede e explica o limite permitido</label>
+                        <label class="option"><input type="radio" name="q9" value="D"> D) Ignora</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">10. Áudios sem sentido repetidos.</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q10" value="A"> A) Ignora se não incomodar muito</label>
+                        <label class="option"><input type="radio" name="q10" value="B"> B) Apenas pede para parar</label>
+                        <label class="option"><input type="radio" name="q10" value="C"> C) Orienta e aplica aviso se continuar</label>
+                        <label class="option"><input type="radio" name="q10" value="D"> D) Deixa passar</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">11. O papel do ADM é:</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q11" value="A"> A) Manter o grupo agradável</label>
+                        <label class="option"><input type="radio" name="q11" value="B"> B) Evitar conflitos</label>
+                        <label class="option"><input type="radio" name="q11" value="C"> C) Garantir o cumprimento das regras com justiça</label>
+                        <label class="option"><input type="radio" name="q11" value="D"> D) Ajudar os membros</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">12. Se um ADM estiver errado:</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q12" value="A"> A) Corrige no grupo na hora</label>
+                        <label class="option"><input type="radio" name="q12" value="B"> B) Ignora para evitar conflito</label>
+                        <label class="option"><input type="radio" name="q12" value="C"> C) Resolve com respeito entre a equipe de ADM</label>
+                        <label class="option"><input type="radio" name="q12" value="D"> D) Defende ele</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">13. Membro novo quebra regra sem saber:</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q13" value="A"> A) Só explica</label>
+                        <label class="option"><input type="radio" name="q13" value="B"> B) Ignora por ser novo</label>
+                        <label class="option"><input type="radio" name="q13" value="C"> C) Explica que não pode, se fazer de novo aplica um aviso</label>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-text">14. Grupo fugindo do tema:</div>
+                    <div class="options">
+                        <label class="option"><input type="radio" name="q14" value="A"> A) Permite se estiver leve</label>
+                        <label class="option"><input type="radio" name="q14" value="B"> B) Participa</label>
+                        <label class="option"><input type="radio" name="q14" value="C"> C) Orienta voltar ao foco</label>
+                        <label class="option"><input type="radio" name="q14" value="D"> D) Ignora</label>
+                    </div>
+                </div>
+
                 <!-- PARTE 1 — TEÓRICO -->
                 <h3 class="section-title">🌸 PARTE 1 — TEÓRICO (Conhecimento das regras)</h3>
                 
                 <div class="question-box">
-                    <div class="question-text">1. O que você faria se dois membros começassem uma discussão no grupo?</div>
+                    <div class="question-text">15. O que você faria se dois membros começassem uma discussão no grupo?</div>
                     <div class="text-answer">
-                        <textarea name="q1_text" rows="3" placeholder="Descreva sua ação..."></textarea>
+                        <textarea name="q15_text" rows="3" placeholder="Descreva sua ação..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">2. Quantos avisos um membro pode receber antes de ser banido?</div>
+                    <div class="question-text">16. Quantos avisos um membro pode receber antes de ser banido?</div>
                     <div class="text-answer">
-                        <textarea name="q2_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q16_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">3. É permitido divulgar links no grupo? Em qual situação?</div>
+                    <div class="question-text">17. É permitido divulgar links no grupo? Em qual situação?</div>
                     <div class="text-answer">
-                        <textarea name="q3_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q17_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">4. O que fazer se alguém enviar conteúdo 🔞?</div>
+                    <div class="question-text">18. O que fazer se alguém enviar conteúdo 🔞?</div>
                     <div class="text-answer">
-                        <textarea name="q4_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q18_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">5. Pode vender contas ou robux no grupo?</div>
+                    <div class="question-text">19. Pode vender contas ou robux no grupo?</div>
                     <div class="text-answer">
-                        <textarea name="q5_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q19_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">6. Se alguém começar a floodar, qual seria sua atitude?</div>
+                    <div class="question-text">20. Se alguém começar a floodar, qual seria sua atitude?</div>
                     <div class="text-answer">
-                        <textarea name="q6_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q20_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">7. O grupo permite leilões? O que precisa ser feito antes de iniciar um?</div>
+                    <div class="question-text">21. O grupo permite leilões? O que precisa ser feito antes de iniciar um?</div>
                     <div class="text-answer">
-                        <textarea name="q7_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q21_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">8. Um membro pode acusar outro de golpe no grupo? Por quê?</div>
+                    <div class="question-text">22. Um membro pode acusar outro de golpe no grupo? Por quê?</div>
                     <div class="text-answer">
-                        <textarea name="q8_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q22_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">9. Pode enviar áudios estourados ou sem sentido? O que fazer nesses casos?</div>
+                    <div class="question-text">23. Pode enviar áudios estourados ou sem sentido? O que fazer nesses casos?</div>
                     <div class="text-answer">
-                        <textarea name="q9_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q23_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">10. Qual é o principal objetivo do grupo?</div>
+                    <div class="question-text">24. Qual é o principal objetivo do grupo?</div>
                     <div class="text-answer">
-                        <textarea name="q10_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q24_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
@@ -386,72 +555,72 @@
                 <h3 class="section-title">🌷 PARTE 2 — SITUAÇÕES PRÁTICAS (Aqui você testa o comportamento real)</h3>
 
                 <div class="question-box">
-                    <div class="question-text">11. Um membro começa a pedir pets de graça insistentemente (floodando). O que você faz?</div>
+                    <div class="question-text">25. Um membro começa a pedir pets de graça insistentemente (floodando). O que você faz?</div>
                     <div class="text-answer">
-                        <textarea name="q11_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q25_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">12. Dois membros começam a discutir por causa de valores de pets. Como você resolve?</div>
+                    <div class="question-text">26. Dois membros começam a discutir por causa de valores de pets. Como você resolve?</div>
                     <div class="text-answer">
-                        <textarea name="q12_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q26_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">13. Alguém tenta começar um leilão enquanto outro já está acontecendo. O que você faz?</div>
+                    <div class="question-text">27. Alguém tenta começar um leilão enquanto outro já está acontecendo. O que você faz?</div>
                     <div class="text-answer">
-                        <textarea name="q13_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q27_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">14. Um membro manda link sem permissão. Qual sua atitude?</div>
+                    <div class="question-text">28. Um membro manda link sem permissão. Qual sua atitude?</div>
                     <div class="text-answer">
-                        <textarea name="q14_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q28_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">15. Um participante dá um lance fake no leilão. Como você reage?</div>
+                    <div class="question-text">29. Um participante dá um lance fake no leilão. Como você reage?</div>
                     <div class="text-answer">
-                        <textarea name="q15_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q29_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">16. Um membro desrespeita um ADM. O que você faz?</div>
+                    <div class="question-text">30. Um membro desrespeita um ADM. O que você faz?</div>
                     <div class="text-answer">
-                        <textarea name="q16_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q30_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">17. Um leilão terminou, mas o dono não quer vender para o último lance. Como você resolve?</div>
+                    <div class="question-text">31. Um leilão terminou, mas o dono não quer vender para o último lance. Como você resolve?</div>
                     <div class="text-answer">
-                        <textarea name="q17_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q31_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">18. Alguém começa a falar de política no grupo. O que você faz?</div>
+                    <div class="question-text">32. Alguém começa a falar de política no grupo. O que você faz?</div>
                     <div class="text-answer">
-                        <textarea name="q18_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q32_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">19. Um membro envia figurinhas maldosas. Qual sua ação?</div>
+                    <div class="question-text">33. Um membro envia figurinhas maldosas. Qual sua ação?</div>
                     <div class="text-answer">
-                        <textarea name="q19_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q33_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">20. Um participante tenta fazer rifa de pet escondido. Como você age?</div>
+                    <div class="question-text">34. Um participante tenta fazer rifa de pet escondido. Como você age?</div>
                     <div class="text-answer">
-                        <textarea name="q20_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q34_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
@@ -459,23 +628,23 @@
                 <h3 class="section-title">🌼 PARTE 3 — PERFIL (Pra ver maturidade e postura)</h3>
 
                 <div class="question-box">
-                    <div class="question-text">21. O que você faria para melhorar o grupo?</div>
+                    <div class="question-text">35. O que você faria para melhorar o grupo?</div>
                     <div class="text-answer">
-                        <textarea name="q21_text" rows="4" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q35_text" rows="4" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">22. Como você lidaria com pressão ou conflitos no grupo?</div>
+                    <div class="question-text">36. Como você lidaria com pressão ou conflitos no grupo?</div>
                     <div class="text-answer">
-                        <textarea name="q22_text" rows="4" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q36_text" rows="4" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">23. O que é mais importante: amizade ou regras?</div>
+                    <div class="question-text">37. O que é mais importante: amizade ou regras?</div>
                     <div class="text-answer">
-                        <textarea name="q23_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q37_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
@@ -483,9 +652,9 @@
                 <h3 class="section-title">💐 PERGUNTA DIFERENCIAL (ESSA SEPARA OS MELHORES)</h3>
 
                 <div class="question-box">
-                    <div class="question-text">24. Se um amigo seu quebrar uma regra, o que você faria?</div>
+                    <div class="question-text">38. Se um amigo seu quebrar uma regra, o que você faria?</div>
                     <div class="text-answer">
-                        <textarea name="q24_text" rows="4" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q38_text" rows="4" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
             </div>
@@ -553,8 +722,18 @@
                 document.getElementById('emailError').style.display = 'none';
             }
 
-            // Validar todas as questões textuais (1 a 24)
-            for (let i = 1; i <= 24; i++) {
+            // Validar questões objetivas (1 a 14)
+            for (let i = 1; i <= 14; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!selected) {
+                    alert(`Por favor, responda a questão ${i} (parte objetiva)`);
+                    isValid = false;
+                    break;
+                }
+            }
+
+            // Validar todas as questões textuais (15 a 38)
+            for (let i = 15; i <= 38; i++) {
                 const textarea = document.querySelector(`textarea[name="q${i}_text"]`);
                 if (textarea && textarea.value.trim() === '') {
                     alert(`Por favor, responda a questão ${i}`);
@@ -573,8 +752,15 @@
             answers += `Nome: ${document.getElementById('userName').value}\n`;
             answers += `Email: ${document.getElementById('userEmail').value}\n\n`;
             
+            answers += "🌸 TESTE OBJETIVO (NÍVEL DIFÍCIL)\n\n";
+            for (let i = 1; i <= 14; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                answers += `Q${i}: ${selected ? selected.value : 'Não respondida'}\n`;
+            }
+            answers += "\n";
+            
             answers += "🌸 PARTE 1 — TEÓRICO (Conhecimento das regras)\n\n";
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 15; i <= 24; i++) {
                 const answer = document.querySelector(`textarea[name="q${i}_text"]`);
                 if (answer) {
                     answers += `Q${i}: ${answer.value}\n\n`;
@@ -582,7 +768,7 @@
             }
             
             answers += "🌷 PARTE 2 — SITUAÇÕES PRÁTICAS\n\n";
-            for (let i = 11; i <= 20; i++) {
+            for (let i = 25; i <= 34; i++) {
                 const answer = document.querySelector(`textarea[name="q${i}_text"]`);
                 if (answer) {
                     answers += `Q${i}: ${answer.value}\n\n`;
@@ -590,7 +776,7 @@
             }
             
             answers += "🌼 PARTE 3 — PERFIL\n\n";
-            for (let i = 21; i <= 23; i++) {
+            for (let i = 35; i <= 37; i++) {
                 const answer = document.querySelector(`textarea[name="q${i}_text"]`);
                 if (answer) {
                     answers += `Q${i}: ${answer.value}\n\n`;
@@ -598,9 +784,9 @@
             }
             
             answers += "💐 PERGUNTA DIFERENCIAL\n\n";
-            const q24 = document.querySelector(`textarea[name="q24_text"]`);
-            if (q24) {
-                answers += `Q24: ${q24.value}\n\n`;
+            const q38 = document.querySelector(`textarea[name="q38_text"]`);
+            if (q38) {
+                answers += `Q38: ${q38.value}\n\n`;
             }
             
             return answers;
