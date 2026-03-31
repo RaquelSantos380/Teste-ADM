@@ -84,34 +84,6 @@
             box-shadow: 0 0 0 3px rgba(240, 155, 174, 0.3);
         }
         
-        .rules-box {
-            background: linear-gradient(135deg, #f8f0f2, #fae6ee);
-            border: 2px solid #f09bae;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 25px 0;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-        
-        .rules-title {
-            font-size: 1.3em;
-            font-weight: 700;
-            color: #f09bae;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .rule-item {
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(240, 155, 174, 0.3);
-            line-height: 1.5;
-        }
-        
-        .rule-item:last-child {
-            border-bottom: none;
-        }
-        
         .section-title {
             font-size: 1.5em;
             color: #f09bae;
@@ -145,59 +117,6 @@
             margin-bottom: 15px;
             color: #083170;
             line-height: 1.4;
-        }
-        
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .option {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            background: #f8f0f2;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .option:hover {
-            background: #fae6ee;
-            border-color: #f09bae;
-        }
-        
-        .option input {
-            width: auto;
-            margin-right: 10px;
-        }
-        
-        .checkbox-option {
-            display: flex;
-            align-items: flex-start;
-            padding: 12px 15px;
-            background: #f8f0f2;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .checkbox-option:hover {
-            background: #fae6ee;
-            border-color: #f09bae;
-        }
-        
-        .checkbox-option input {
-            width: auto;
-            margin-right: 10px;
-            margin-top: 3px;
-        }
-        
-        .text-answer {
-            margin-top: 10px;
         }
         
         .text-answer textarea {
@@ -337,14 +256,25 @@
             display: none;
         }
         
-        .part-badge {
-            display: inline-block;
-            background: #f09bae;
-            color: white;
-            font-size: 0.8em;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .warning-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #856404;
             margin-bottom: 10px;
+        }
+        
+        .warning-text {
+            color: #856404;
+            font-size: 1em;
         }
     </style>
 </head>
@@ -352,7 +282,7 @@
     <div class="container">
         <div class="header">
             <h1 class="title">🌷 Teste para Administradores 🌷</h1>
-            <p class="subtitle">LojinhaDaRakyOfficial - Demonstre seu conhecimento sobre as regras do grupo!</p>
+            <p class="subtitle">LojinhaDaRakyOfficial - Demonstre seu conhecimento sobre o grupo!</p>
         </div>
 
         <form id="testForm">
@@ -371,24 +301,10 @@
                 </div>
             </div>
 
-            <!-- Regras do Grupo -->
-            <div class="rules-box">
-                <h3 class="rules-title">📋 Regras do Grupo - LojinhaDaRakyOfficial</h3>
-                <div class="rule-item">• 1- Ser gentil com todos</div>
-                <div class="rule-item">• 2- Respeitar os membros e evitar Brigas desnecessárias 🪷</div>
-                <div class="rule-item">• 3- Sem figurinhas 🔞 ou maldosas!</div>
-                <div class="rule-item">• 4- Palavras ofensivas, ou assuntos 🔞 não são permitidos.</div>
-                <div class="rule-item">• 5- Nada de acusações ou intrigas!</div>
-                <div class="rule-item">• 6- Respeite os admins E A RAKY! 🪷</div>
-                <div class="rule-item">• 7- Não flode (ex: Figurinhas, pedido de doações)🌷</div>
-                <div class="rule-item">• 8- Sem áudios estourados/sem sentido</div>
-                <div class="rule-item">• 9- Evite julgar o valor do próximo</div>
-                <div class="rule-item">• 10- Evite fotos/vídeos de coisas pessoais</div>
-                <div class="rule-item">• 11- NÃO Ligar sem permissão 📞</div>
-                <div class="rule-item">• 12- Antes de divulgar Links, peça permissão a algum ADM 💕</div>
-                <div class="rule-item">• 13- Aqui é grupo sobre Adopt Me, não para conversar sobre qualquer coisa! 💐</div>
-                <div class="rule-item">• 14- ❌ Rifas de Pets</div>
-                <div class="rule-item">• 15- Não permitimos vendas de contas/robux/ ou grupos 💐</div>
+            <!-- Aviso - Sem Regras -->
+            <div class="warning-box">
+                <h3 class="warning-title">⚠️ ATENÇÃO ⚠️</h3>
+                <p class="warning-text">Este teste avalia seu conhecimento sobre as regras e funcionamento do grupo. Responda com base no que você aprendeu observando e participando!</p>
             </div>
 
             <!-- Questões do Teste -->
@@ -543,37 +459,23 @@
                 <h3 class="section-title">🌼 PARTE 3 — PERFIL (Pra ver maturidade e postura)</h3>
 
                 <div class="question-box">
-                    <div class="question-text">21. Por que você quer ser ADM?</div>
+                    <div class="question-text">21. O que você faria para melhorar o grupo?</div>
                     <div class="text-answer">
                         <textarea name="q21_text" rows="4" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">22. O que você faria para melhorar o grupo?</div>
+                    <div class="question-text">22. Como você lidaria com pressão ou conflitos no grupo?</div>
                     <div class="text-answer">
                         <textarea name="q22_text" rows="4" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
                 <div class="question-box">
-                    <div class="question-text">23. Como você lidaria com pressão ou conflitos no grupo?</div>
+                    <div class="question-text">23. O que é mais importante: amizade ou regras?</div>
                     <div class="text-answer">
-                        <textarea name="q23_text" rows="4" placeholder="Sua resposta..."></textarea>
-                    </div>
-                </div>
-
-                <div class="question-box">
-                    <div class="question-text">24. Você conseguiria ser justo(a) mesmo com amigos no grupo?</div>
-                    <div class="text-answer">
-                        <textarea name="q24_text" rows="3" placeholder="Sua resposta..."></textarea>
-                    </div>
-                </div>
-
-                <div class="question-box">
-                    <div class="question-text">25. O que é mais importante: amizade ou regras?</div>
-                    <div class="text-answer">
-                        <textarea name="q25_text" rows="3" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q23_text" rows="3" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
 
@@ -581,9 +483,9 @@
                 <h3 class="section-title">💐 PERGUNTA DIFERENCIAL (ESSA SEPARA OS MELHORES)</h3>
 
                 <div class="question-box">
-                    <div class="question-text">26. Se um amigo seu quebrar uma regra, o que você faria?</div>
+                    <div class="question-text">24. Se um amigo seu quebrar uma regra, o que você faria?</div>
                     <div class="text-answer">
-                        <textarea name="q26_text" rows="4" placeholder="Sua resposta..."></textarea>
+                        <textarea name="q24_text" rows="4" placeholder="Sua resposta..."></textarea>
                     </div>
                 </div>
             </div>
@@ -651,8 +553,8 @@
                 document.getElementById('emailError').style.display = 'none';
             }
 
-            // Validar todas as questões textuais (1 a 26)
-            for (let i = 1; i <= 26; i++) {
+            // Validar todas as questões textuais (1 a 24)
+            for (let i = 1; i <= 24; i++) {
                 const textarea = document.querySelector(`textarea[name="q${i}_text"]`);
                 if (textarea && textarea.value.trim() === '') {
                     alert(`Por favor, responda a questão ${i}`);
@@ -688,7 +590,7 @@
             }
             
             answers += "🌼 PARTE 3 — PERFIL\n\n";
-            for (let i = 21; i <= 25; i++) {
+            for (let i = 21; i <= 23; i++) {
                 const answer = document.querySelector(`textarea[name="q${i}_text"]`);
                 if (answer) {
                     answers += `Q${i}: ${answer.value}\n\n`;
@@ -696,9 +598,9 @@
             }
             
             answers += "💐 PERGUNTA DIFERENCIAL\n\n";
-            const q26 = document.querySelector(`textarea[name="q26_text"]`);
-            if (q26) {
-                answers += `Q26: ${q26.value}\n\n`;
+            const q24 = document.querySelector(`textarea[name="q24_text"]`);
+            if (q24) {
+                answers += `Q24: ${q24.value}\n\n`;
             }
             
             return answers;
@@ -731,8 +633,8 @@
 
             try {
                 await emailjs.send(
-                    'service_uto6ltk',
-                    'template_ywc2wly', 
+                    'service_s6hcwoa',
+                    'template_wx7bj1m',
                     templateParams
                 );
 
